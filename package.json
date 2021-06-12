@@ -1,12 +1,12 @@
 {
-  "name": "server-side",
+  "name": "test2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build && cd .. npm start"
   },
   "keywords": [],
   "author": "",
