@@ -8,13 +8,13 @@ const PORT = process.env.PORT || 4600
 app.use(express.json())
 
 app.use(express.static(path.join(__dirname, './client/build')))
-// app.use(express.static('public'))
+app.use(express.static('public'))
 
-// app.use((req, res, next) => {
-//     res.sendFile(path.join(__dirname, '../client-side', 'build', 'index.html'))
-// })
+app.use((req, res, next) => {
+    res.sendFile(path.join(__dirname, '../client-side', 'build', 'index.html'))
+})
 
-// console.log(path.join(__dirname, 'client/build'))
+console.log(path.join(__dirname, 'client/build'))
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'))
